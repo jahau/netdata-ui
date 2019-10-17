@@ -7,4 +7,5 @@ export {
   getOrElse,
   ContstructedTheme,
   getColor,
+  getGutterHeight,
 } from "./utils"
