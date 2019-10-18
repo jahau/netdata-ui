@@ -1,6 +1,6 @@
-export { default as Mock } from "./src/components/mock";
-export { default as Button } from "./src/components/button";
-export { Sidebar, PortalSidebar } from "./src/components/sidebar";
+export { default as Mock } from "./src/components/mock"
+export { default as Button } from "./src/components/button"
+export { Sidebar, PortalSidebar } from "./src/components/sidebar"
 export {
   extendTheme,
   ThemeAtom,
@@ -9,10 +9,9 @@ export {
   calcSize,
   getOrElse,
   ContstructedTheme,
-  propOrElse,
   getColor,
-  getGutterHeight
-} from "./src/theme";
-export { DefaultTheme } from "./src/theme/default";
-export { devices } from "./src/media";
-export { Checkbox, CheckboxProps } from "./src/components/checkbox";
+  getGutterHeight,
+} from "./src/theme"
+export { DefaultTheme } from "./src/theme/default"
+export { devices } from "./src/media"
+export { Checkbox, CheckboxProps } from "./src/components/checkbox"
