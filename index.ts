@@ -8,8 +8,6 @@ export {
   getSizeBy,
   calcSize,
   getOrElse,
-  ContstructedTheme,
-  propOrElse,
   getColor,
   getGutterHeight,
 } from "./src/theme"
