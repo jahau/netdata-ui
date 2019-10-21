@@ -1,4 +1,4 @@
-const rawColors = {
+const rawColors: RawColorsT = {
   white: {
     pure: "#FFF",
   },
@@ -33,9 +33,9 @@ const rawColors = {
   },
 }
 
-const appColors = {}
+const appColors: AppColorsT = {}
 
-export const colors = {
+export const colors: RawColorsT & AppColorsT = {
   ...appColors,
   ...rawColors,
 }

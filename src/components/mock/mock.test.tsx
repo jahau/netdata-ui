@@ -1,8 +1,8 @@
-/**
- * @jest-environment jsdom
- */
+/* eslint-disable spaced-comment */
+/// <reference types="./types" />
+/* eslint-enable spaced-comment */
 import "@testing-library/jest-dom/extend-expect"
-import { Mock, MockPropsT } from "./mock"
+import { Mock } from "./mock"
 import { DefaultTheme } from "../../theme/default"
 import { testWrapper } from "../../../test-utils"
 
