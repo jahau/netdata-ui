@@ -1,5 +1,36 @@
-import React from "react"
-import { CellBox, NestedCellContainer, NestedCell } from "./styled"
+import React, { useRef, useState } from "react"
+import { useDebounce, useIntersection } from "react-use"
+
+const InsteadOfChart = () => {
+  const nodeRef = useRef(null)
+  const intersection = useIntersection(nodeRef, {
+    root: null,
+    rootMargin: "0px",
+    threshold: undefined,
+  })
+
+  // debounce visibility so we see transition changes
+  const isVisible = Boolean(intersection?.intersectionRatio)
+  const [ isVisibleDebounced, setIsVisibleDebounced ] = useState(isVisible)
+  useDebounce(
+    () => {
+      setIsVisibleDebounced(isVisible)
+    },
+    1000,
+    [isVisible],
+  )
+
+  console.log("isVisible", isVisible) // eslint-disable-line no-console
+  return (
+    <div
+      ref={nodeRef}
+      style={{ background: isVisibleDebounced ? "green" : "red" }}
+    >
+      CHART
+    </div>
+  )
+}
+
 
 export const NodesTableSchema = [
   {
@@ -56,6 +87,6 @@ export const NodesTableSchema = [
     accessor: "chart4",
     width: 200,
     Header: () => <div>Chart Name</div>,
-    Cell: (props: any) => <div>Chart placeholder</div>,
+    Cell: InsteadOfChart,
   },
 ]
